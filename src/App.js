@@ -144,7 +144,7 @@ function App() {
     setAllTexts(prev => [...prev, <div key={allTexts.length}>{prompt}{uInput}</div>])
 
     if (command.toLowerCase().split(' ')[0] === 'sudo') {
-      window.open('https://www.youtube.com/watch?v=jeg_TJvkSjg', '_blank').focus();
+      window.open('https://www.youtube.com/watch?v=jeg_TJvkSjg').focus();
       return;
     }
 
