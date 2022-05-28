@@ -39,7 +39,7 @@ const Github = () => {
     return (
         <div>
             <div><a className='link' href={'https://www.github.com/' + github_name} target='_blank' rel="noreferrer noopener">github.com/{github_name}</a></div>
-            <div className='long-text'>Here, you may find all my projects. Not many yet, but it'll get more soon!</div>
+            <div className='long-text'>Here, you may find all my projects. Not many yet, but it'll get more soon! Find details on my projects with the <span className='command'>projects</span>-command</div>
         </div>
     )
 }
