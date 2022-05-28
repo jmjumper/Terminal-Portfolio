@@ -148,7 +148,7 @@ function App() {
       return;
     }
 
-    switch (command.toLowerCase()) {
+    switch (command.toLowerCase().trim()) {
       case 'clear':
         setAllTexts(() => []);
         setCleared(() => true);
