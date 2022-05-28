@@ -8,7 +8,7 @@ const Help = () => {
         <div>
             <div>List of available commands:</div>
             <div className='subList'>
-                <span className='command'>whois</span> for stalkers only
+                <span className='command'>whois</span> yeah, that is about me
             </div>
             <div className='subList'>
                 <span className='command'>github</span> find all projects over there
