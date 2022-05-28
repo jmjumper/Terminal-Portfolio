@@ -1,0 +1,23 @@
+.subList {
+    margin-left: 1em;
+    color: rgb(110, 110, 110);
+}
+
+.command {
+    color: rgb(255, 184, 92);
+    text-shadow: 0 0 5px rgb(255, 184, 92);
+    margin-right: 0.5em;
+}
+
+.long-text {
+    margin-right: 40%;
+    margin-left: 1em;
+    color: rgb(211, 211, 211);
+}
+
+.link {
+    color: rgb(255, 184, 92);
+    text-shadow: 0 0 5px rgb(255, 184, 92);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(255, 184, 92);
+}
