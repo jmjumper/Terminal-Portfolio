@@ -53,10 +53,28 @@ const Projects = () => {
                 The backend (which was done by cyborck) was written in Java with the Spring framework and extracts the data of the official app. The frontend (done by me) were implemented with the React Native framework.
                 This is probably my most important project.
             </div>
+
             <br />
             <div className='subList'><a className='link' href='https://github.com/jmjumper/MakeDownloadfoldersPrettyAgain' target='_blank' rel="noreferrer noopener">MakeDownloadfoldersPrettyAgain</a> - Download-Folder Organizer (Python)</div>
             <div className='long-text'>
                 This small Python project makes your download-folder finally pretty again. It sorts all files by their extensions into according subfolders.
+            </div>
+
+            <br />
+            <div className='subList'><a className='link' href='https://github.com/jmjumper/RayCasting' target='_blank' rel="noreferrer noopener">RayCasting</a> - casts light rays to 3D (Java)</div>
+            <div className='long-text'>
+                This program simulates and determines shadows and light. These light rays are used to render a 3D world by representing cach one 'column' of pixels. This technique were often used in old ego-shooter computer games such as Doom or Duke Nukem. I love it.
+            </div>
+
+            <br />
+            <div className='subList'><a className='link' href='https://github.com/jmjumper/SortAlgoViewer' target='_blank' rel="noreferrer noopener">Sortalgorithm Viewer</a> - visualizes sort algorithms (Java)</div>
+            <div className='long-text'>
+                This program just visualizes sorting algorithms. I highly encourage you to lower your volume. Thank me later. 
+            </div>
+
+            <br />
+            <div className='long-text'>
+                There will certainly be coming more in the future...
             </div>
         </div>
     )

@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+html, body, #app, #app>div {
+  height: 100%
+}
+
 .App {
   background-color: #282c34;
-  min-height: 100vh;
+
   display: flex;
+  min-height: 100vh;
+  height: 100%;
+
   color: rgb(255, 255, 255);
-  padding: 1em;
-  font-size: 1em;
   flex-direction: column;
   font-family: 'Inconsolata', monospace;
+  font-size: 1.0em;
+}
+
+.padding {
+  padding: 1em;
 }
 
 .inputModule {

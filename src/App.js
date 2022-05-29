@@ -30,7 +30,7 @@ const notFoundMessage = <div className='notFoundText'>Error: Command not found! 
 const prompt = <span className='prompt'>visitor@jmjumper.de$ </span>;
 
 const ascii_arts = [
-`                      ________|          |________
+  `                      ________|          |________
                      |       /   ||||||   \\       |
                      |     ,'              \`.     |
                      |   ,'                  \`.   |
@@ -53,7 +53,7 @@ const ascii_arts = [
          |   [__][________________][__]              [__][]|| |
          \`----------------------------------------------------'
 `,
-`             ________________________________________________
+  `             ________________________________________________
             /                                                \\
            |    _________________________________________     |
            |   |                                         |    |
@@ -82,7 +82,7 @@ const ascii_arts = [
 :-------------------------------------------------------------------------:
 \`---._.-------------------------------------------------------------._.---'
 `,
-`      _________________________________________________________________  
+  `      _________________________________________________________________  
      /                                                                 \\  
     |    __________________________________________________________     |
     |   |                                                          |    |
@@ -112,13 +112,13 @@ const ascii_arts = [
 :-------------------------------------------------------------------------:
 \`---._.-------------------------------------------------------------._.---'
 `,
-`   _            _                                 
+  `   _            _                                 
   (_)_ __ ___  (_)_   _ _ __ ___  _ __   ___ _ __ 
   | | '_ \` _ \\ | | | | | '_ \` _ \\| '_ \\ / _ \\ '__|
   | | | | | | || | |_| | | | | | | |_) |  __/ |   
  _/ |_| |_| |_|/ |\\__,_|_| |_| |_| .__/ \\___|_|   
 |__/         |__/                |_|              
-` 
+`
 ]
 
 
@@ -136,9 +136,13 @@ function App() {
   const [commandsUndo, setCommandsUndo] = useState([]);
   const [commandsRedo, setCommandsRedo] = useState([]);
 
+
+  const scrollRef = useRef(null)
+
   useEffect(() => {
     document.title = 'jmjumper.sh';
-  })
+    scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [allTexts])
 
   const sendCommand = (command) => {
     setAllTexts(prev => [...prev, <div key={allTexts.length}>{prompt}{uInput}</div>])
@@ -195,11 +199,11 @@ function App() {
       setInput(() => '');
     } else if (ARROW_UP.includes(String(key))) {
       const command = commandsUndo.pop();
-      setCommandsRedo ((prev) => [...prev, command]);
+      setCommandsRedo((prev) => [...prev, command]);
       setInput(() => command);
     } else if (ARROW_DOWN.includes(String(key))) {
       const command = commandsRedo.pop();
-      setCommandsUndo ((prev) => [...prev, command]);
+      setCommandsUndo((prev) => [...prev, command]);
       setInput(() => command);
     }
   };
@@ -207,41 +211,41 @@ function App() {
 
   return (
     <div className="App">
+      <div className='padding'>
+
+        <div>
+          Welcome to <span className='white_glow'>jmjumper.sh v1.0.1</span> (Portfolio Script 2022)
+          <br />  <br />
+          {welcomeMessage}
+          {helpMessage}
+        </div>
+        {
+          !isCleared &&
+          <pre className='ascii-art'>{art}</pre>
+        }
+        <br />
+        <div>
+          {allTexts}
+        </div>
 
 
-      <div>
-        Welcome to <span className='white_glow'>jmjumper.sh v1.0.1</span> (Portfolio Script 2022)
-        <br />  <br />
-        {welcomeMessage}
-        {helpMessage}
+        <div className='inputWrapper' ref={scrollRef}>
+          {prompt}
+          <input
+            type="text"
+            value={uInput}
+            placeholder=""
+            label="Name"
+            name="name"
+            onChange={handleInputChange}
+            className="inputModule"
+            autoComplete='off'
+            spellCheck='false'
+            autoFocus={true}
+          />
+        </div>
+
       </div>
-{
-      !isCleared &&
-      <pre className='ascii-art'>{art}</pre>
-}
-      <br />
-      <div>
-        {allTexts}
-      </div>
-
-
-      <div className='inputWrapper'>
-        {prompt}
-        <input
-          type="text"
-          value={uInput}
-          placeholder=""
-          label="Name"
-          name="name"
-          onChange={handleInputChange}
-          className="inputModule"
-          autoComplete='off'
-          spellCheck='false'
-          autoFocus={true}
-        />
-      </div>
-
-
     </div>
   );
 }
